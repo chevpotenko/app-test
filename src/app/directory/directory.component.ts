@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-directory',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectoryComponent implements OnInit {
 
-  constructor() { }
+  params:String;
+  
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    let param = this.route.snapshot.paramMap.get('id');;
+    if(param){
+      this.params = param;
+    }
   }
 
 }
