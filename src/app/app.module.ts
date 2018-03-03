@@ -7,13 +7,15 @@ import { APP_ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { DirectoryComponent } from './directory/directory.component';
+import { DefaultComponent } from './default/default.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    DirectoryComponent
+    DirectoryComponent,
+    DefaultComponent
   ],
   imports: [
     BrowserModule,
