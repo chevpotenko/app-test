@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-
+import { LoggingService } from '../logging.service';
 
 
 @Component({
@@ -25,13 +25,17 @@ export class DirectoryComponent implements OnInit {
   term:String;
   
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private logging: LoggingService
+  ) { }
 
   ngOnInit() {
     let param = this.route.snapshot.paramMap.get('id');;
     if(param){
       this.params = param;
     }
+    console.log(this.logging.log());
   }
 
 }

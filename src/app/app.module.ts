@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { DirectoryComponent } from './directory/directory.component';
 import { DefaultComponent } from './default/default.component';
 import { FilterPipe } from './filter.pipe';
+import { LoggingService } from './logging.service';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { FilterPipe } from './filter.pipe';
     FormsModule,
     RouterModule.forRoot(APP_ROUTES)
   ],
-  providers: [],
+  providers: [LoggingService],
   bootstrap: [AppComponent]  
 })
 export class AppModule { }
