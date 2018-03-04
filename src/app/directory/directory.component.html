@@ -1,4 +1,9 @@
-<p>
-  directory works!
-</p>
-<p>{{params}}</p>
+<h2>Brands</h2>
+<form>
+  <label for="name">Filter by name:</label>
+  &nbsp;
+  <input [(ngModel)]="term" type="text" id="name" name="brand"/>
+</form>
+<ul>
+  <li *ngFor="let brand of autos | filter:term ">{{ brand.name }}</li>
+</ul>

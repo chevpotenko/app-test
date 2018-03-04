@@ -2,12 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { APP_ROUTES } from './app.routes';
-
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { DirectoryComponent } from './directory/directory.component';
 import { DefaultComponent } from './default/default.component';
+import { FilterPipe } from './filter.pipe';
 
 
 @NgModule({
@@ -15,14 +15,13 @@ import { DefaultComponent } from './default/default.component';
     AppComponent,
     HomeComponent,
     DirectoryComponent,
-    DefaultComponent
+    DefaultComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(
-      APP_ROUTES,
-      { enableTracing: true } // <-- debugging purposes only
-    )
+    FormsModule,
+    RouterModule.forRoot(APP_ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]  
