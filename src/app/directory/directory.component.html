@@ -5,5 +5,5 @@
   <input [(ngModel)]="term" type="text" id="name" name="brand"/>
 </form>
 <ul>
-  <li *ngFor="let brand of autos | filter:term ">{{ brand.name }}</li>
+  <li *ngFor="let item of list | filter:term ">{{ item.name }}</li>
 </ul>

@@ -5,8 +5,8 @@ export class LoggingService {
 
   constructor() { }
 
-  log() {
-    console.log("I'm a service");
+  log(val) {
+    console.log(val);
   }
 
 }

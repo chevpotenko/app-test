@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { LoggingService } from '../logging.service';
+import { DataService } from '../data.service';
+import { List } from '../list';
 
 
 @Component({
@@ -12,22 +14,14 @@ import { LoggingService } from '../logging.service';
 export class DirectoryComponent implements OnInit {
 
   params:String;
-  brands = [
-    {name: 'Nike'},
-    {name: 'Adidas'},
-    {name: 'Puma'}
-  ];
-  autos = [
-    {name: 'Audi'},
-    {name: 'BMW'},
-    {name: 'VW'}
-  ];
+  list:List[] = [];
   term:String;
   
 
   constructor(
     private route: ActivatedRoute,
-    private logging: LoggingService
+    private logging: LoggingService,
+    private data: DataService,
   ) { }
 
   ngOnInit() {
@@ -35,7 +29,8 @@ export class DirectoryComponent implements OnInit {
     if(param){
       this.params = param;
     }
-    console.log(this.logging.log());
+    this.logging.log("I'm a service");
+    this.data.fetchData().subscribe(data => { this.list= data});
   }
 
 }
